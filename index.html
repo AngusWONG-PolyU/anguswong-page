@@ -100,10 +100,60 @@
     <section id="about" class="py-16 section-animate">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">About Me</h2>
-            <div class="max-w-3xl mx-auto glass-card p-8 rounded-2xl">
-                <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                    I am a curious individual with a strong interest in programming. I enjoy exploring how programs work and have a genuine desire to understand the underlying rationale. When faced with challenges, I persevere and actively seek out solutions. I am also responsible and possess effective time management skills to complete assignments within deadlines.
-                </p>
+            <div class="max-w-4xl mx-auto">
+                <div class="glass-card p-8 rounded-2xl mb-8">
+                    <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                        I am a curious individual with a strong interest in programming. I enjoy exploring how programs work and have a genuine desire to understand the underlying rationale. When faced with challenges, I persevere and actively seek out solutions. I am also responsible and possess effective time management skills to complete assignments within deadlines
+                    </p>
+                </div>
+                
+                <!-- Education -->
+                <div class="glass-card p-8 rounded-2xl mb-8">
+                    <h3 class="text-2xl font-bold mb-6 text-primary dark:text-blue-400 flex items-center">
+                        <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                        Education
+                    </h3>
+                    <div class="space-y-6">
+                        <div class="border-l-4 border-primary dark:border-blue-400 pl-4">
+                            <h4 class="text-xl font-semibold text-gray-800 dark:text-gray-100">The Hong Kong Polytechnic University</h4>
+                            <p class="text-gray-600 dark:text-gray-400 mb-1">BSc (Hons) in Computer Science</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-500 mb-2">2023 – 2026</p>
+                            <p class="text-primary dark:text-blue-400 font-semibold">Current GPA: 3.65</p>
+                        </div>
+                        <div class="border-l-4 border-primary dark:border-blue-400 pl-4">
+                            <h4 class="text-xl font-semibold text-gray-800 dark:text-gray-100">Hong Kong Community College</h4>
+                            <p class="text-gray-600 dark:text-gray-400 mb-1">Associate in Information Technology</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-500 mb-2">2021 – 2023</p>
+                            <p class="text-primary dark:text-blue-400 font-semibold">GPA: 3.43</p>
+                        </div>
+                        <div class="border-l-4 border-gray-300 dark:border-gray-600 pl-4">
+                            <h4 class="text-xl font-semibold text-gray-800 dark:text-gray-100">Cheung Chau Government Secondary School</h4>
+                            <p class="text-sm text-gray-500 dark:text-gray-500">2015 – 2021</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Experience -->
+                <div class="glass-card p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold mb-6 text-primary dark:text-blue-400 flex items-center">
+                        <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        Experience
+                    </h3>
+                    <div class="border-l-4 border-primary dark:border-blue-400 pl-4">
+                        <h4 class="text-xl font-semibold text-gray-800 dark:text-gray-100">Summer Intern</h4>
+                        <p class="text-gray-600 dark:text-gray-400 mb-1">Inland Revenue Department</p>
+                        <p class="text-sm text-gray-500 dark:text-gray-500 mb-4">17/06/2024 – 16/08/2024</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                            <li>Used VBA to develop an internal tool using Userform on Excel to allow users to interact with Microsoft Access database</li>
+                            <li>Created Userform in Microsoft Access to allow users to import XML files into the corresponding tables and search records from different tables</li>
+                            <li>Performed user acceptance test for new portal development and the internal workflow system</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -265,8 +315,16 @@
                     <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">
                         I'm always interested in new opportunities and collaborations. Feel free to reach out!
                     </p>
+                    <div class="mb-6">
+                        <a href="mailto:anguswong6993@gmail.com" class="inline-flex items-center text-primary dark:text-blue-400 hover:text-secondary dark:hover:text-blue-300 transition-all text-lg font-medium">
+                            <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            anguswong6993@gmail.com
+                        </a>
+                    </div>
                     <div class="flex justify-center space-x-6">
-                        <a href="https://github.com/AngusWONG-PolyU" target="_blank" class="social-link text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-all transform hover:scale-110">
+                        <a href="https://github.com/AngusWONG-PolyU" target="_blank" class="social-link text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 transition-all transform hover:scale-110" aria-label="GitHub">
                             <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
                                 <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
                             </svg>
