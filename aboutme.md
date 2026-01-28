@@ -5,14 +5,14 @@ I am a curious individual with a strong interest in programming. I enjoy explori
 
 Email: anguswong6993@gmail.com
 
-## Education
+### Education
 * The Hong Kong Polytechnic University
 BSc (Hons) in Computer Science (Current GPA: 3.65) 2023 – 2026
 * Hong Kong Community College
 Associate in Information Technology (GPA: 3.43) 2021 – 2023
 * Cheung Chau Government Secondary School 2015 – 2021
 
-## Experience
+### Experience
 Summer Intern, Inland Revenue Department 17/06/2024 – 16/08/2024
 * Used VBA to develop an internal tool using Userform on Excel to allow users to interact with Microsoft Access database
 * Created Userform in Microsoft Access to allow users to import XML files into the corresponding tables and search records from different tables
