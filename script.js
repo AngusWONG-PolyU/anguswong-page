@@ -1,5 +1,57 @@
-// Mobile Menu Toggle
+// Dark Mode Toggle & Mobile Menu
 document.addEventListener('DOMContentLoaded', function() {
+    // Dark mode functionality
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleMobileBtn = document.getElementById('theme-toggle-mobile');
+    const htmlElement = document.documentElement;
+    
+    // Icon elements
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const darkIconMobile = document.getElementById('theme-toggle-dark-icon-mobile');
+    const lightIconMobile = document.getElementById('theme-toggle-light-icon-mobile');
+    
+    // Check for saved theme preference or default to light mode
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    
+    if (currentTheme === 'dark') {
+        htmlElement.classList.add('dark');
+        darkIcon.classList.remove('hidden');
+        lightIcon.classList.add('hidden');
+        darkIconMobile.classList.remove('hidden');
+        lightIconMobile.classList.add('hidden');
+    } else {
+        htmlElement.classList.remove('dark');
+        darkIcon.classList.add('hidden');
+        lightIcon.classList.remove('hidden');
+        darkIconMobile.classList.add('hidden');
+        lightIconMobile.classList.remove('hidden');
+    }
+    
+    // Toggle theme function
+    function toggleTheme() {
+        if (htmlElement.classList.contains('dark')) {
+            htmlElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+            darkIcon.classList.add('hidden');
+            lightIcon.classList.remove('hidden');
+            darkIconMobile.classList.add('hidden');
+            lightIconMobile.classList.remove('hidden');
+        } else {
+            htmlElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+            darkIcon.classList.remove('hidden');
+            lightIcon.classList.add('hidden');
+            darkIconMobile.classList.remove('hidden');
+            lightIconMobile.classList.add('hidden');
+        }
+    }
+    
+    // Add click event listeners
+    themeToggleBtn.addEventListener('click', toggleTheme);
+    themeToggleMobileBtn.addEventListener('click', toggleTheme);
+    
+    // Mobile Menu Toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     
@@ -93,14 +145,54 @@ document.addEventListener('DOMContentLoaded', function() {
         sectionObserver.observe(section);
     });
     
-    // Navbar background on scroll
+    // Skill Progress Bar Animation
+    const skillObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const progressBar = entry.target.querySelector('.skill-progress');
+                const targetWidth = entry.target.dataset.progress || '80';
+                
+                setTimeout(() => {
+                    progressBar.style.width = targetWidth + '%';
+                }, 200);
+                
+                skillObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    skillCards.forEach(card => {
+        skillObserver.observe(card);
+    });
+    
+    // Navbar hide on scroll down, show on scroll up
+    let lastScroll = 0;
     const navbar = document.querySelector('nav');
+    
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll <= 0) {
+            navbar.style.transform = 'translateY(0)';
+            return;
+        }
+        
+        if (currentScroll > lastScroll && currentScroll > 100) {
+            // Scroll down
+            navbar.style.transform = 'translateY(-100%)';
+        } else {
+            // Scroll up
+            navbar.style.transform = 'translateY(0)';
+        }
+        
+        // Add shadow on scroll
+        if (currentScroll > 50) {
             navbar.classList.add('shadow-lg');
         } else {
             navbar.classList.remove('shadow-lg');
         }
+        
+        lastScroll = currentScroll;
     });
     
     // Skill cards animation on hover
@@ -149,8 +241,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Back to top button (optional)
     const backToTopBtn = document.createElement('button');
     backToTopBtn.innerHTML = '↑';
-    backToTopBtn.className = 'fixed bottom-8 right-8 bg-primary text-white w-12 h-12 rounded-full shadow-lg hover:bg-secondary transition-all opacity-0 pointer-events-none z-50';
+    backToTopBtn.className = 'fixed bottom-8 right-8 bg-primary dark:bg-blue-600 text-white w-12 h-12 rounded-full shadow-lg hover:bg-secondary dark:hover:bg-blue-700 transition-all opacity-0 pointer-events-none z-50 hover:scale-110';
     backToTopBtn.id = 'back-to-top';
+    backToTopBtn.setAttribute('aria-label', 'Back to top');
     document.body.appendChild(backToTopBtn);
     
     window.addEventListener('scroll', function() {
@@ -171,6 +264,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Console message for developers
-    console.log('%c👋 Hi there!', 'font-size: 20px; font-weight: bold; color: #2563eb;');
-    console.log('%cThanks for checking out my portfolio!', 'font-size: 14px; color: #666;');
+    console.log('%c👋 Welcome to Angus WONG\'s Portfolio!', 'font-size: 20px; font-weight: bold; color: #2563eb;');
+    console.log('%c✨ Dark mode available - click the theme toggle button!', 'font-size: 14px; color: #7c3aed;');
+    console.log('%c🚀 Enjoy exploring!', 'font-size: 12px; color: #10b981;');
 });
