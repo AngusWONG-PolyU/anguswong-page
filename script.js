@@ -146,6 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Skill Progress Bar Animation
+    const skillCards = document.querySelectorAll('.skill-card');
     const skillObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -196,7 +197,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Skill cards animation on hover
-    const skillCards = document.querySelectorAll('.skill-card');
     skillCards.forEach(card => {
         card.addEventListener('mouseenter', function() {
             this.style.borderLeft = '4px solid #2563eb';
@@ -220,22 +220,52 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Add typing effect to the hero title (optional enhancement)
+    // Implementation: preserve element nodes (e.g. <span class="...">) and only type text nodes
     const heroTitle = document.querySelector('.animate-fade-in');
     if (heroTitle) {
-        const text = heroTitle.innerHTML;
+        const originalNodes = Array.from(heroTitle.childNodes);
+        // clear container
         heroTitle.innerHTML = '';
-        let i = 0;
-        
-        function typeWriter() {
-            if (i < text.length) {
-                heroTitle.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, 50);
+
+        // collect targets: leaf text nodes to be typed into
+        const targets = [];
+
+        function buildPlaceholder(node, parent) {
+            if (node.nodeType === Node.TEXT_NODE) {
+                const textNode = document.createTextNode('');
+                parent.appendChild(textNode);
+                targets.push({ node: textNode, text: node.textContent });
+            } else if (node.nodeType === Node.ELEMENT_NODE) {
+                const clone = node.cloneNode(false); // shallow clone (attributes preserved)
+                parent.appendChild(clone);
+                node.childNodes.forEach(child => buildPlaceholder(child, clone));
+            } else {
+                // other node types: ignore but preserve structure
             }
         }
-        
-        // Uncomment the next line to enable typing effect
-        // setTimeout(typeWriter, 500);
+
+        originalNodes.forEach(n => buildPlaceholder(n, heroTitle));
+
+        // typing loop across targets
+        let tIndex = 0;
+        let cIndex = 0;
+
+        function typeStep() {
+            if (tIndex >= targets.length) return;
+            const target = targets[tIndex];
+            if (cIndex < target.text.length) {
+                target.node.nodeValue += target.text.charAt(cIndex);
+                cIndex++;
+                setTimeout(typeStep, 35);
+            } else {
+                tIndex++;
+                cIndex = 0;
+                setTimeout(typeStep, 35);
+            }
+        }
+
+        // start after a short delay
+        setTimeout(typeStep, 400);
     }
     
     // Back to top button (optional)
