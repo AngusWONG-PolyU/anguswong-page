@@ -21,7 +21,8 @@ Summer Intern, Inland Revenue Department 17/06/2024 – 16/08/2024
 ## My Skills
 * Git and GitHub for basic version control
 * Familiar with Unity for game development
-* Familiar with programming languages such as C, C#, C++, Java, Python, JavaScript, and VBA, as well as the markup language HTML
+* Familiar with programming languages such as C, C#, C++, Java, Python, JavaScript, and VBA
+* Familiar with the markup language HTML
 * Basic Linux and Bash, such as common commands, pipes, redirection, and simple scripts for automation
 * Basic SQL skills for querying and data manipulation
 
