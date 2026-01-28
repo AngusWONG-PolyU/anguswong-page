@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angus WONG - Personal Homepage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1e40af',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold text-primary">Angus WONG</h1>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link hover:text-primary transition-colors">Home</a>
+                    <a href="#about" class="nav-link hover:text-primary transition-colors">About</a>
+                    <a href="#skills" class="nav-link hover:text-primary transition-colors">Skills</a>
+                    <a href="#projects" class="nav-link hover:text-primary transition-colors">Projects</a>
+                    <a href="#contact" class="nav-link hover:text-primary transition-colors">Contact</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="#home" class="block py-2 hover:text-primary transition-colors">Home</a>
+                <a href="#about" class="block py-2 hover:text-primary transition-colors">About</a>
+                <a href="#skills" class="block py-2 hover:text-primary transition-colors">Skills</a>
+                <a href="#projects" class="block py-2 hover:text-primary transition-colors">Projects</a>
+                <a href="#contact" class="block py-2 hover:text-primary transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-fade-in">
+                        Hi, I'm <span class="text-primary">Angus WONG</span>
+                    </h2>
+                    <p class="text-xl md:text-2xl text-gray-600 mb-6">
+                        A passionate programmer and problem solver
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#projects" class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary transition-colors shadow-lg">
+                            View My Work
+                        </a>
+                        <a href="#contact" class="border-2 border-primary text-primary px-6 py-3 rounded-lg hover:bg-primary hover:text-white transition-colors">
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="profile-image-container">
+                        <img src="profile-photo.jpg" alt="Angus WONG" class="rounded-full shadow-2xl w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-primary">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">About Me</h2>
+            <div class="max-w-3xl mx-auto">
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    I am a curious individual with a strong interest in programming. I enjoy exploring how programs work and have a genuine desire to understand the underlying rationale. When faced with challenges, I persevere and actively seek out solutions. I am also responsible and possess effective time management skills to complete assignments within deadlines.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">My Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <div class="skill-card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-3">
+                        <svg class="w-8 h-8 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                        </svg>
+                        <h3 class="text-xl font-semibold">Programming Languages</h3>
+                    </div>
+                    <p class="text-gray-600">C, C#, C++, Java, Python, JavaScript, VBA, HTML</p>
+                </div>
+                
+                <div class="skill-card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-3">
+                        <svg class="w-8 h-8 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                        <h3 class="text-xl font-semibold">Version Control</h3>
+                    </div>
+                    <p class="text-gray-600">Git and GitHub for basic version control</p>
+                </div>
+                
+                <div class="skill-card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-3">
+                        <svg class="w-8 h-8 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <h3 class="text-xl font-semibold">Game Development</h3>
+                    </div>
+                    <p class="text-gray-600">Familiar with Unity for game development</p>
+                </div>
+                
+                <div class="skill-card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-3">
+                        <svg class="w-8 h-8 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        <h3 class="text-xl font-semibold">Linux & Bash</h3>
+                    </div>
+                    <p class="text-gray-600">Basic Linux commands, pipes, redirection, and automation scripts</p>
+                </div>
+                
+                <div class="skill-card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-3">
+                        <svg class="w-8 h-8 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
+                        </svg>
+                        <h3 class="text-xl font-semibold">Database</h3>
+                    </div>
+                    <p class="text-gray-600">Basic SQL skills for querying and data manipulation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">My Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Project 1 -->
+                <div class="project-card bg-gray-50 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3 text-primary">Revenge Recipe</h3>
+                        <p class="text-gray-600 mb-4">3D Adventure Motion Game</p>
+                        <p class="text-gray-700 mb-4">An immersive 3D adventure game built with Unity, featuring engaging motion mechanics and captivating gameplay.</p>
+                        <a href="https://www.youtube.com/watch?v=8zKKzVE30Ow" target="_blank" class="inline-flex items-center text-primary hover:text-secondary transition-colors">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"></path>
+                            </svg>
+                            Watch Trailer
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card bg-gray-50 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3 text-primary">Happy Tap Cat</h3>
+                        <p class="text-gray-600 mb-4">Simple Mobile Game</p>
+                        <p class="text-gray-700 mb-4">A fun and engaging mobile game designed for casual gaming. Please open on a mobile device for the best experience.</p>
+                        <a href="https://sbi99687.itch.io/happy-tap-cat" target="_blank" class="inline-flex items-center text-primary hover:text-secondary transition-colors">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd"></path>
+                            </svg>
+                            Play Game
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card bg-gray-50 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3 text-primary">Food Two</h3>
+                        <p class="text-gray-600 mb-4">Mobile Online Simulated Ordering Application</p>
+                        <p class="text-gray-700 mb-4">A comprehensive mobile application for simulated food ordering. Better viewed on a mobile device.</p>
+                        <a href="https://anguswong1012.github.io/Food-Two/" target="_blank" class="inline-flex items-center text-primary hover:text-secondary transition-colors">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd"></path>
+                            </svg>
+                            View App
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Get In Touch</h2>
+            <div class="max-w-2xl mx-auto text-center">
+                <p class="text-lg text-gray-700 mb-8">
+                    I'm always interested in new opportunities and collaborations. Feel free to reach out!
+                </p>
+                <div class="flex justify-center space-x-6">
+                    <a href="https://github.com/AngusWONG-PolyU" target="_blank" class="social-link text-gray-600 hover:text-primary transition-colors">
+                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2026 Angus WONG. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
